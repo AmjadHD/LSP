@@ -230,7 +230,7 @@ clojure-lsp has a [rich set of initializationOptions](https://github.com/snoe/cl
 
 ### Dart<a name="dart"></a>
 
-1. Install the [Dart](https://packagecontrol.io/packages/Dart) package from Package Control for syntax highlighting.
+1. Install the [Dartlight](https://packagecontrol.io/packages/Dartlight) package from Package Control for syntax highlighting.
 2. Install the [Dart SDK](https://dart.dev/get-dart) and locate path to `analysis_server.dart.snapshot` in the "snapshots/bin" directory.
 3. Add to LSP settings' clients (adjust the path if necessary):
 
@@ -240,7 +240,7 @@ clojure-lsp has a [rich set of initializationOptions](https://github.com/snoe/cl
   "enabled": true,
   "languageId": "dart",
   "scopes": ["source.dart"],
-  "syntaxes": ["Packages/Dart/Dart.tmLanguage"]
+  "syntaxes": ["Packages/Dartlight/Dart.tmLanguage"]
 }
 ```
 
@@ -444,11 +444,11 @@ npm install -g flow-language-server
     "-XX:+UseG1GC",
     "-XX:+UseStringDeduplication",
     "-jar",
-    "PATH/TO/jdt-language-server-latest/plugins/org.eclipse.equinox.launcher_*.jar"
+    "PATH/TO/jdt-language-server-latest/plugins/org.eclipse.equinox.launcher_*.jar" // 1. replace the PATH/TO with your own 2. replace * with the file version
     "-configuration",
-    "PATH/TO/jdt-language-server-latest/config_{win|mac|linux}", // depending on the OS
+    "PATH/TO/jdt-language-server-latest/config_{win|mac|linux}", // 1. replace the PATH/TO with your own 2. choose the config folder based on the OS
     "-data",
-    "<TEMP_DIR>/${project_base_name}/jdt_ws"
+    "<TEMP_DIR>/${project_base_name}/jdt_ws" // replace <TEMP_DIR> with the temp folder in your system. macOS: echo $TMPDIR
   ],
   "enabled": true,
   "languageId": "java",
